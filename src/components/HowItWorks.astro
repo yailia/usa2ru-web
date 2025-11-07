@@ -1,0 +1,96 @@
+---
+const steps = [
+  {
+    icon: '🛒',
+    title: 'Покупка онлайн',
+    description: 'Покупайте в любимых американских магазинах и добавляйте товары в корзину. Мы позаботимся обо всем остальном.'
+  },
+  {
+    icon: '📦',
+    title: 'Доставка на наш склад',
+    description: 'Используйте наш адрес в США как пункт назначения для всех ваших покупок.'
+  },
+  {
+    icon: '📚',
+    title: 'Консолидация и упаковка',
+    description: 'Мы объединяем ваши товары, проверяем их и надежно упаковываем для международной доставки.'
+  },
+  {
+    icon: '🚚',
+    title: 'Быстрая доставка',
+    description: 'Получайте ваши товары быстро и надежно прямо к вашей двери, в любую точку мира.'
+  }
+];
+---
+
+<section id="how-it-works" class="section" style="background-color: var(--color-white);">
+  <div class="container">
+    <h2 class="section-title">Как это работает</h2>
+    <div class="grid grid-4">
+      {steps.map((step, index) => (
+        <div class="step-card">
+          <div class="step-icon">{step.icon}</div>
+          <div class="step-number">{String(index + 1).padStart(2, '0')}</div>
+          <h3 class="step-title">{step.title}</h3>
+          <p class="step-description">{step.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .step-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background-color: var(--color-white);
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    position: relative;
+  }
+
+  .step-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(10, 186, 181, 0.2);
+  }
+
+  .step-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    filter: grayscale(0.2);
+  }
+
+  .step-number {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    opacity: 0.3;
+  }
+
+  .step-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-dark);
+  }
+
+  .step-description {
+    color: var(--color-text-light);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .step-card {
+      padding: 1.5rem 1rem;
+    }
+
+    .step-icon {
+      font-size: 3rem;
+    }
+  }
+</style>
+

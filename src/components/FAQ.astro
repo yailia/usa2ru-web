@@ -1,0 +1,131 @@
+---
+const faqs = [
+  {
+    question: 'Как начать отправку товаров?',
+    answer: 'Просто зарегистрируйтесь на нашем сайте, получите ваш персональный адрес в США и начните делать покупки в американских магазинах, используя этот адрес как адрес доставки.'
+  },
+  {
+    question: 'Какие товары можно отправлять?',
+    answer: 'Мы можем отправлять большинство товаров, включая электронику, одежду, косметику, книги и многое другое. Некоторые ограничения применяются к опасным материалам, скоропортящимся продуктам и товарам, запрещенным к ввозу в вашу страну.'
+  },
+  {
+    question: 'Сколько занимает международная доставка?',
+    answer: 'Время доставки зависит от выбранного тарифа и пункта назначения. Обычно это занимает от 7 до 21 рабочего дня. Экспресс-доставка доступна за дополнительную плату.'
+  },
+  {
+    question: 'Можно ли отслеживать посылки?',
+    answer: 'Да, вы можете отслеживать все ваши посылки в реальном времени через ваш личный кабинет. Вы будете получать обновления на каждом этапе пути вашей посылки.'
+  }
+];
+---
+
+<section id="faq" class="section" style="background-color: var(--color-white);">
+  <div class="container">
+    <h2 class="section-title">Часто задаваемые вопросы</h2>
+    <div class="faq-list">
+      {faqs.map((faq, index) => (
+        <div class="faq-item">
+          <button class="faq-question" data-index={index}>
+            <span>{faq.question}</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background-color: var(--color-white);
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: var(--transition);
+  }
+
+  .faq-item:hover {
+    box-shadow: 0 4px 12px rgba(10, 186, 181, 0.15);
+  }
+
+  .faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: none;
+    text-align: left;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    cursor: pointer;
+  }
+
+  .faq-question span {
+    flex: 1;
+    margin-right: 1rem;
+  }
+
+  .faq-icon {
+    transition: transform 0.3s ease;
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+
+  .faq-item.active .faq-icon {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 1.5rem;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 1.5rem 1.5rem;
+  }
+
+  .faq-answer p {
+    color: var(--color-text-light);
+    line-height: 1.6;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const faqItem = question.closest('.faq-item');
+        const isActive = faqItem.classList.contains('active');
+        
+        // Закрыть все остальные
+        document.querySelectorAll('.faq-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // Открыть/закрыть текущий
+        if (!isActive) {
+          faqItem.classList.add('active');
+        }
+      });
+    });
+  });
+</script>
+

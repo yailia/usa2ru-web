@@ -1,0 +1,81 @@
+---
+const shops = [
+  { name: 'Amazon', placeholder: true },
+  { name: 'eBay', placeholder: true },
+  { name: 'Walmart', placeholder: true },
+  { name: 'Target', placeholder: true },
+  { name: 'Best Buy', placeholder: true },
+  { name: 'Apple Store', placeholder: true }
+];
+---
+
+<section id="shops" class="section" style="background-color: var(--color-light-gray);">
+  <div class="container">
+    <h2 class="section-title">Часто покупают в этих магазинах</h2>
+    <div class="shops-grid">
+      {shops.map((shop) => (
+        <div class="shop-card">
+          <div class="shop-logo">
+            <span class="shop-name">{shop.name}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .shops-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .shops-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .shop-card {
+    background-color: var(--color-white);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+  }
+
+  .shop-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(10, 186, 181, 0.15);
+  }
+
+  .shop-logo {
+    text-align: center;
+  }
+
+  .shop-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+  }
+
+  @media (max-width: 768px) {
+    .shops-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .shop-card {
+      padding: 1.5rem;
+      min-height: 120px;
+    }
+  }
+</style>
+

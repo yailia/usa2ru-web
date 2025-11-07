@@ -1,0 +1,104 @@
+---
+---
+
+<section id="contact" class="section" style="background-color: var(--color-white);">
+  <div class="container">
+    <h2 class="section-title">Свяжитесь с нами</h2>
+    <p class="section-description">
+      Есть вопросы или нужна помощь? Наша служба поддержки готова помочь!
+    </p>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#0ABAB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 6L12 13L2 6" stroke="#0ABAB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="contact-label">Email</h3>
+        <a href="mailto:support@usa2ru.com" class="contact-value">support@usa2ru.com</a>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7292C21.7209 20.9842 21.5573 21.2131 21.3528 21.4011C21.1483 21.5891 20.9074 21.7319 20.6447 21.8207C20.382 21.9095 20.1035 21.9423 19.8273 21.9169C16.7283 21.5751 13.7259 20.5128 11.0001 18.8099C8.53798 17.3146 6.31493 15.4782 4.42005 13.3799C2.76252 11.5524 1.47158 9.40378 0.620056 7.05989C0.253306 5.89389 0.0170312 4.69099 -0.0839434 3.47389C-0.109413 3.19789 0.0233125 2.92589 0.212612 2.71889C0.401912 2.51189 0.637212 2.38089 0.887312 2.34089C3.29931 1.92889 5.78731 1.92889 8.19931 2.34089C8.78931 2.43089 9.22931 2.96089 9.12931 3.55089L8.00931 9.44089C7.91931 9.99089 8.19931 10.5209 8.68931 10.8009L11.7893 12.5009C12.5493 12.9009 13.5093 12.7009 14.0893 12.0509L19.2093 6.28089C19.5893 5.85089 20.2193 5.80089 20.6493 6.18089C21.6093 6.96089 22.2993 8.06089 22.6093 9.30089C22.7693 9.96089 22.3893 10.6009 21.7293 10.7609L15.6393 12.3009C14.9293 12.4809 14.3393 13.0709 14.1593 13.7809L12.6193 19.8709C12.4593 20.5309 11.8193 20.9109 11.1593 20.7509C9.91931 20.4409 8.81931 19.7509 8.03931 18.7909" stroke="#0ABAB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="contact-label">Телефон</h3>
+        <a href="tel:+18001234567" class="contact-value">+1 (800) 123 4567</a>
+      </div>
+      
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="#0ABAB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#0ABAB5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="contact-label">Адрес</h3>
+        <p class="contact-value">123 Main St, New York, NY 10001</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .contact-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .contact-item {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--color-light-gray);
+    border-radius: 1rem;
+    transition: var(--transition);
+  }
+
+  .contact-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(10, 186, 181, 0.15);
+  }
+
+  .contact-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-value {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    display: block;
+  }
+
+  .contact-value:hover {
+    color: var(--color-primary);
+  }
+</style>
+

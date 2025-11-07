@@ -1,0 +1,173 @@
+---
+const plans = [
+  {
+    name: 'Базовый',
+    price: '$15',
+    period: '/месяц',
+    features: [
+      'До 5 посылок',
+      'Стандартная консолидация',
+      'Поддержка по email'
+    ]
+  },
+  {
+    name: 'Премиум',
+    price: '$35',
+    period: '/месяц',
+    features: [
+      'До 15 посылок',
+      'Расширенная консолидация',
+      'Приоритетная поддержка',
+      'Базовая страховка'
+    ],
+    popular: true
+  },
+  {
+    name: 'Бизнес',
+    price: '$70',
+    period: '/месяц',
+    features: [
+      'Неограниченное количество посылок',
+      'Персональный менеджер',
+      'Премиум страховка',
+      'Поддержка в реальном времени'
+    ]
+  }
+];
+---
+
+<section id="pricing" class="section" style="background-color: var(--color-light-gray);">
+  <div class="container">
+    <h2 class="section-title">Прозрачные тарифы</h2>
+    <div class="pricing-grid">
+      {plans.map((plan) => (
+        <div class={`pricing-card ${plan.popular ? 'popular' : ''}`}>
+          {plan.popular && <div class="popular-badge">Популярный</div>}
+          <h3 class="plan-name">{plan.name}</h3>
+          <div class="plan-price">
+            <span class="price-amount">{plan.price}</span>
+            <span class="price-period">{plan.period}</span>
+          </div>
+          <ul class="plan-features">
+            {plan.features.map((feature) => (
+              <li>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="10" cy="10" r="10" fill="#0ABAB5"/>
+                  <path d="M6 10L9 13L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <button class="btn btn-primary plan-button">Выбрать план</button>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .pricing-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .pricing-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .pricing-card {
+    background-color: var(--color-white);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(10, 186, 181, 0.2);
+  }
+
+  .pricing-card.popular {
+    border: 2px solid var(--color-primary);
+    transform: scale(1.05);
+  }
+
+  .popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .plan-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-dark);
+    text-align: center;
+  }
+
+  .plan-price {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .price-amount {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .price-period {
+    font-size: 1rem;
+    color: var(--color-text-light);
+  }
+
+  .plan-features {
+    list-style: none;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+  }
+
+  .plan-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+  }
+
+  .plan-button {
+    width: 100%;
+    margin-top: auto;
+  }
+
+  @media (max-width: 768px) {
+    .pricing-card.popular {
+      transform: scale(1);
+    }
+  }
+</style>
+

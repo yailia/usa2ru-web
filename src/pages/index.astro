@@ -1,16 +1,41 @@
 ---
-
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import HowItWorks from "../components/HowItWorks.astro";
+import Services from "../components/Services.astro";
+import Products from "../components/Products.astro";
+import Pricing from "../components/Pricing.astro";
+import Account from "../components/Account.astro";
+import Shops from "../components/Shops.astro";
+import FAQ from "../components/FAQ.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="USA2RU - надежная доставка товаров из США. Ваш партнер для удобных покупок и быстрой доставки товаров из США на ваш международный адрес."
+    />
+    <title>USA2RU - Доставка товаров из США</title>
+  </head>
+  <body>
+    <Header />
+    <Hero />
+    <HowItWorks />
+    <Services />
+    <Products />
+    <Pricing />
+    <Account />
+    <Shops />
+    <FAQ />
+    <Contact />
+    <Footer />
+  </body>
 </html>
